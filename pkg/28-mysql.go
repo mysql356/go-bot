@@ -16,9 +16,11 @@ type Tag struct {
 	Name string `json:"name"`
 }
 
+const dsn = "root:@tcp(127.0.0.1:3307)/test"
+
 func Mysql_connect() {
 	// Open up our database connection.
-	db, err := sql.Open("mysql", "root:root@2021@tcp(127.0.0.1:3306)/test")
+	db, err := sql.Open("mysql", dsn )
 
 	// if there is an error opening the connection, handle it
 	if err != nil {
@@ -33,7 +35,7 @@ func Mysql_connect() {
 
 func Mysql() {
 	// Open up our database connection.
-	db, err := sql.Open("mysql", "root:root@2021@tcp(127.0.0.1:3306)/test")
+	db, err := sql.Open("mysql", dsn)
 
 	// if there is an error opening the connection, handle it
 	if err != nil {
@@ -85,9 +87,10 @@ func Mysql() {
 
 /*
 CREATE TABLE `test` (
-  `id` int NOT NULL,
-  `name` varchar(50) NOT NULL
-);
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1
 
 
 INSERT INTO `test` (`id`, `name`) VALUES

@@ -80,9 +80,9 @@ func checkErr(err error) {
 pq - A pure Go postgres driver for Go's database/sql package
 go get github.com/lib/pq
 https://github.com/lib/pq
-*/
+ 
 
-/*sql
+create userinfo_uid_seq manually
 
 CREATE TABLE dev.userinfo
 (
@@ -97,5 +97,6 @@ WITH (
 );
 ALTER TABLE dev.userinfo
   OWNER TO postgres;
+
 
 */
